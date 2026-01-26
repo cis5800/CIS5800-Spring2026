@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="data/penn_logo.png">
+	<title>Machine Perception – Spring Semester 2025</title>
+	<link rel="shortcut icon" href="favicon.html">
+	<link rel="stylesheet" type="text/css" href="data/gvv.css">
+	<link rel="stylesheet" type="text/css" href="data/seminar.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		function togglePapers(o) {
+			$(o).parents('table.topics tr').find('.paper').toggle();
+		}
+
+		function showAllPapers() {
+			$('div.paper').show();
+			$('div.container').show();
+			$('div.comparison').show();
+			$('a.showpapers').hide();
+			$('a.hidepapers').show();
+		}
+
+		function hideAllPapers() {
+			$('div.paper').hide();
+			$('div.container').hide();
+			$('div.comparison').hide();
+			$('a.showpapers').show();
+			$('a.hidepapers').hide();
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const today = new Date();
+
+			document.querySelectorAll('.topics tr').forEach((row, index) => {
+				if (index === 0) return;
+
+				const dateCell = row.querySelector('.date i');
+				if (dateCell) {
+					try {
+						const cellDate = new Date(`2025 ${dateCell.textContent.trim()}`);
+						if (isNaN(cellDate)) throw new Error('Invalid date');
+
+						if (cellDate > today) {
+							row.style.backgroundColor = '#d3d3d3';
+							row.style.pointerEvents = 'none';
+							row.style.opacity = '0.5';
+						}
+					} catch (error) {
+						console.error(`Error processing date: ${dateCell.textContent}`, error);
+					}
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="wrap">
+		<div style="text-align: center">
+			<a href="https://www.upenn.edu/"><img src="data/full_penn_logo.png" alt="Logos of UPenn" width="400"></a>
+		</div>
+
+		<h1 style="text-align: center;">Machine Perception</h1>
+		<h2 style="text-align: center;">Spring Semester 2025</h2>
+		<hr>
+
+		<hr>
+		<h2 style="text-align: center;">
+			<a href="index.html">Home</a> &nbsp;|&nbsp;
+			<b>Slides</b> &nbsp;|&nbsp;
+
+			<a href="syllabus.html">Syllabus</a> &nbsp;|&nbsp;
+			<a href="resource.html">Resources</a>
+		</h2>
+		<hr>
+		<h2><a name="topics">Topics</a></h2>
+		<hr>
+
+		<br>
+		<table class="topics" border="1">
+			<tr>
+				<th>Lecture Schedule</th>
+				<th width="160">Date</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projection Model</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_1.pdf">Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 15</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Holiday</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 20</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projective Transformations</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_2.pdf">
+								Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 22</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projective Transformations</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_3.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 27</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Projective Transformations</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_10_v4.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Jan 29</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Class Cancelled</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 03</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Class Cancelled</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 05</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Computing Homographies From 4 Point Correspondences</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-1view_10_v5.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 10</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Vanishing Points, Horizon, and Camera Pose Estimation</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_10_v6.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 12</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Cross Ratios & Length Measurements from Single Images (“Single View Metrology”)</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_10_v7.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 17</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Fixing Camera 6DoF Pose Estimation w.r.t world plane</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_10_v8.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 19</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Pose from Point Correspondences, the Perspective N Point Problem (PnP)</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-1view_10_v9.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 24</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Calibrating Camera Under More General Intrinsics</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2024-1view_10_v10.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Feb 26</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">3D Motion from Two Views
+						or Structure from Motion</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_01.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 03</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Epipolar, Essential Matrix, 8-Point Algorithm</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_02.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 05</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Spring Break</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 10</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Spring Break</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 12</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Structure from Motion I</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_03.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 17</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Structure from Motion II</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_04.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 19</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Midterm Exam Review</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025_midtermexam_review.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 24</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Midterm Exam</a></div>
+					<div class="paper">
+						<div class="title"><a>In-person Written Exam</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 26</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Image Stitching / Mosaicing From Rotated Views, Hough</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_05.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Mar 31</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">RANSAC, Point Correspondences Through Optical Flow</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_06.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 02</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Inferring 3D Motion from Optical Flow</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_07.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 07</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Predicting Motion From Flow, Scale Invariant Feature Transform (SIFT)</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-2view_08.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 09</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Visual Odometry/SLAM</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_01_update.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 14</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">3D Motion and Structure from Multiple Views or Bundle Adjustment, Mini-Course on Optimization</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_02.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 16</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Optimization Techniques & Efficient Implementation of Bundle Adjustment, Stereopsis For Dense Reconstruction</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_03.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 21</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Stereo Rectification, Multi-View Stereo, Plane-Sweep Stereo</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_04.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 23</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Plane-Sweep Methods and Correspondence Optimization in Multi-View Stereo</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_05.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 28</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Semantic Vision Foundations and Neural Radiance Fields for Scene Reconstruction</a></div>
+					<div class="paper">
+						<div class="title"><a href="slides/580-spring-2025-multiview_06.pdf">
+							Lecture Slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>Apr 30</i></a></div>
+				</td>
+			</tr>
+			<tr style="background-color: #d3d3d3; pointer-events: none; opacity: 0.5;">
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Reading Period</a></div>
+					<div class="paper">
+						<div class="title">No Class</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 05</i></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Final Exam</a></div>
+					<div class="paper">
+						<div class="title"><a>In-person Written Exam</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 07</i></a></div>
+				</td>
+			</tr>
+			<!--
+			<tr>
+				<td>
+					<div class="topic"><a onclick="togglePapers(this)">Topic for May 12</a></div>
+					<div class="paper">
+						<div class="title"><a>slides</a></div>
+					</div>
+				</td>
+				<td align="center">
+					<div class="date"><a onclick="togglePapers(this)"><i>May 12</i></a></div>
+				</td>
+			</tr>
+			-->
+		</table>
+	</div>
+
+	<div id="footer">
+		The website template and its content refer directly to <a
+			href="https://vcai.mpi-inf.mpg.de/teaching/vcai_seminar_2023/index.html">MPII summer seminar</a> <br>
+	</div>
+
+</body>
+
+</html>
