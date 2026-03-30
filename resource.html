@@ -1,15 +1,132 @@
 <!DOCTYPE html>
 <html>
 
-
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="shortcut icon" href="data/penn_logo.png">
 	<title>CIS5800 Machine Perception - Spring Semester 2026</title>
-	<link rel="shortcut icon" href="favicon.html">
 	<link rel="stylesheet" type="text/css" href="data/gvv.css">
 	<link rel="stylesheet" type="text/css" href="data/seminar.css">
+	<style>
+		/* ── Textbook cards ── */
+		.book-grid {
+			display: flex;
+			gap: 24px;
+			flex-wrap: wrap;
+			margin: 1.5em 0;
+		}
+		.book-card {
+			display: flex;
+			align-items: flex-start;
+			gap: 16px;
+			border: 1px solid #d0d7e3;
+			border-radius: 8px;
+			padding: 16px;
+			flex: 1 1 320px;
+			background: #f8faff;
+			transition: box-shadow 0.2s;
+		}
+		.book-card:hover {
+			box-shadow: 0 4px 14px rgba(39,82,178,0.15);
+		}
+		.book-cover {
+			width: 90px;
+			min-width: 90px;
+			height: 120px;
+			object-fit: cover;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+			background: #e8edf5;
+		}
+		.book-cover-placeholder {
+			width: 90px;
+			min-width: 90px;
+			height: 120px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+			background: linear-gradient(135deg, #2752b2 0%, #5b7fcb 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 11px;
+			font-weight: bold;
+			text-align: center;
+			padding: 8px;
+			box-sizing: border-box;
+		}
+		.book-info h3 {
+			margin: 0 0 6px 0;
+			font-size: 15px;
+			line-height: 1.4;
+		}
+		.book-info h3 a {
+			color: #2752b2;
+			text-decoration: none;
+		}
+		.book-info h3 a:hover { text-decoration: underline; }
+		.book-info .authors {
+			font-size: 13px;
+			color: #555;
+			margin: 0 0 8px 0;
+			font-style: italic;
+		}
+		.book-info .badge {
+			display: inline-block;
+			font-size: 11px;
+			background: #e8edf8;
+			color: #2752b2;
+			border-radius: 4px;
+			padding: 2px 7px;
+			border: 1px solid #b8c8e8;
+		}
+
+		/* ── Resource link cards ── */
+		.resource-grid {
+			display: flex;
+			gap: 16px;
+			flex-wrap: wrap;
+			margin: 1.2em 0;
+		}
+		.resource-card {
+			flex: 1 1 200px;
+			border: 1px solid #d0d7e3;
+			border-radius: 8px;
+			padding: 14px 16px;
+			background: #fff;
+			transition: box-shadow 0.2s, border-color 0.2s;
+		}
+		.resource-card:hover {
+			box-shadow: 0 3px 10px rgba(39,82,178,0.12);
+			border-color: #2752b2;
+		}
+		.resource-card .rc-icon {
+			font-size: 22px;
+			margin-bottom: 6px;
+		}
+		.resource-card .rc-title {
+			font-weight: bold;
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
+		.resource-card .rc-title a {
+			color: #2752b2;
+			text-decoration: none;
+		}
+		.resource-card .rc-title a:hover { text-decoration: underline; }
+		.resource-card .rc-desc {
+			font-size: 12px;
+			color: #666;
+		}
+
+		/* ── Section header ── */
+		.section-intro {
+			font-size: 14px;
+			color: #444;
+			margin: 0.5em 0 1em 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -29,26 +146,94 @@
 			<a href="syllabus.html">Syllabus</a> &nbsp;|&nbsp;
 			<b>Resources</b>
 		</h2>
-		<hr>		
-		<h2><a name="course-info">Textbook (Optional)</a></h2>
 		<hr>
-		
-		<p>
-			<li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">Multiple View Geometry in Computer Vision, Second Edition</a> by Richard Hartley and Andrew Zisserman</li>
-			<li><a href="https://cw.fel.cvut.cz/b232/_media/courses/gvg/pajdla-gvg-lecture-2021.pdf">Elements of Geometry for Computer Vision and Computer Grahics</a> by Tomas Pajdla</li>
+
+		<!-- ══ TEXTBOOKS ══ -->
+		<h2><a name="textbooks">Textbooks (Optional)</a></h2>
+		<hr>
+		<p class="section-intro">The following references are recommended companions to the course. Both are freely available online.</p>
+
+		<div class="book-grid">
+
+			<div class="book-card">
+				<img class="book-cover"
+					src="data/resources/multi-view-geometry-in-cv.jpg"
+					alt="Multiple View Geometry book cover">
+				<div class="book-info">
+					<h3><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">Multiple View Geometry in Computer Vision</a></h3>
+					<p class="authors">Richard Hartley &amp; Andrew Zisserman &mdash; 2nd Edition, Cambridge University Press</p>
+					<span class="badge">Core Reference</span>
+					<p style="font-size:12px; color:#555; margin-top:8px;">Covers projective geometry, camera models, epipolar geometry, structure from motion, and more. The definitive reference for geometric computer vision.</p>
+				</div>
+			</div>
+
+			<div class="book-card">
+				<img class="book-cover"
+					src="data/resources/elements-geometry.png"
+					alt="Elements of Geometry book cover">
+				<div class="book-info">
+					<h3><a href="https://cw.fel.cvut.cz/b232/_media/courses/gvg/pajdla-gvg-lecture-2021.pdf">Elements of Geometry for Computer Vision and Computer Graphics</a></h3>
+					<p class="authors">Tomas Pajdla &mdash; Lecture Notes, 2021</p>
+					<span class="badge">Free PDF</span>
+					<p style="font-size:12px; color:#555; margin-top:8px;">Concise treatment of projective and algebraic geometry foundations underlying camera models and multi-view reconstruction.</p>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ══ PYTHON & TOOLS ══ -->
+		<hr>
+		<h2><a name="python">Python &amp; Tools</a></h2>
+		<hr>
+		<p class="section-intro">
+			All assignments use Python. Install from <a href="https://www.python.org/downloads/">python.org</a> or use the course conda environment (<code>conda activate cis580</code>). Reach out to a TA if you need help setting up.
 		</p>
 
-		<hr>
-		<h2><a name="course-info">Python</a></h2>
-		<hr>
-		<br>
-		We will be using Python for the course. More details about downloading Python on your personal computer can be found at <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. This is recommended. If additional assistance is necessary, reach out to your TAs.
-		<p>
-			<li><a href="https://pytorch.org/tutorials/beginner/nlp/pytorch_tutorial.html">Introduction to PyTorch</a></li>
-			<li><a href="http://www.seas.upenn.edu/cets/answers/big-picture.html">Computer Resources at SEAS</a></li>
-			<li><a href="http://www.seas.upenn.edu/cets/answers/virtualLab.html">Virtual PC Lab</a></li>
-		</p>
+		<div class="resource-grid">
 
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F40D;</div>
+				<div class="rc-title"><a href="https://www.python.org/downloads/">Python Downloads</a></div>
+				<div class="rc-desc">Official Python installer for all platforms.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F4D6;</div>
+				<div class="rc-title"><a href="https://numpy.org/doc/stable/user/quickstart.html">NumPy Quickstart</a></div>
+				<div class="rc-desc">Array operations used throughout every homework.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F441;&#xFE0F;</div>
+				<div class="rc-title"><a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV Python Tutorials</a></div>
+				<div class="rc-desc">Image I/O, transformations, and feature detection.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F4CA;</div>
+				<div class="rc-title"><a href="https://matplotlib.org/stable/tutorials/index.html">Matplotlib Tutorials</a></div>
+				<div class="rc-desc">Visualizing images, point clouds, and plots.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F525;</div>
+				<div class="rc-title"><a href="https://pytorch.org/tutorials/beginner/nlp/pytorch_tutorial.html">Introduction to PyTorch</a></div>
+				<div class="rc-desc">Tensor operations and autograd basics.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F5A5;&#xFE0F;</div>
+				<div class="rc-title"><a href="http://www.seas.upenn.edu/cets/answers/big-picture.html">SEAS Computer Resources</a></div>
+				<div class="rc-desc">Computing resources available to Penn SEAS students.</div>
+			</div>
+
+			<div class="resource-card">
+				<div class="rc-icon">&#x1F4BB;</div>
+				<div class="rc-title"><a href="http://www.seas.upenn.edu/cets/answers/virtualLab.html">Virtual PC Lab</a></div>
+				<div class="rc-desc">Remote access to SEAS lab machines.</div>
+			</div>
+
+		</div>
 
 	</div>
 
