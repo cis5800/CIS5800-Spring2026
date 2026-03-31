@@ -10,28 +10,6 @@ This is the **CIS 5800: Machine Perception (Spring 2026)** course repository for
 - `slides/` — PDF lecture slides
 - `index.html`, `syllabus.html`, etc. — Static course website
 
-## Dev Environment
-
-```bash
-conda activate cis580   # activate the course Python environment
-```
-
-Core dependencies: `numpy`, `opencv-python`, `matplotlib`, `gradio`, `trimesh`, `plotly`
-
-## Running Tests
-
-Each homework has its own `tests.py`. Run from within the homework directory:
-
-```bash
-cd CIS-5800-Spr2026-CodingHW/Homework_1
-python3 tests.py
-
-cd CIS-5800-Spr2026-CodingHW/Homework_2
-python3 tests.py
-
-cd CIS-5800-Spr2026-CodingHW/Homework_3
-python3 tests.py
-```
 
 ## Autograding Architecture
 
@@ -47,3 +25,4 @@ Student submissions: `HomeworkN_Student_Version/` directories contain the studen
 - **HW1** — Image transformations: scaling, translation, rotation (implement `homework1.py`)
 - **HW2** — AR pose estimation: homography, PnP, Procrustes, P3P (implement `.py` files)
 - **HW3** — 3D reconstruction: stereo epipolar geometry, disparity, depth (uses Gradio UI)
+- **HW4** — Optical flow: Lucas-Kanade algorithm, epipole estimation (uses Gradio UI)
